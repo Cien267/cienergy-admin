@@ -21,12 +21,12 @@ import { useState } from "react"
 import { toast } from "sonner"
 
 const navItems = [
-  { title: "Dashboard", path: "/dashboard", icon: Home },
-  { title: "Orders", path: "/orders", icon: Coffee },
-  { title: "Users", path: "/users", icon: Users },
+  { title: "Trang chủ", path: "/dashboard", icon: Home },
+  { title: "Đơn đặt hàng", path: "/orders", icon: Coffee },
+  { title: "Khách hàng", path: "/users", icon: Users },
   { title: "Menu", path: "/menu", icon: List },
-  { title: "Analytics", path: "/analytics", icon: BarChart3 },
-  { title: "Settings", path: "/settings", icon: Settings },
+  { title: "Phân tích", path: "/analytics", icon: BarChart3 },
+  { title: "Cài đặt", path: "/settings", icon: Settings },
 ]
 
 export function Sidebar() {
@@ -45,8 +45,9 @@ export function Sidebar() {
     <div className="flex h-full flex-col">
       {/* Logo */}
       <div className="border-b border-border p-6">
-        <h1 className="text-2xl font-bold text-primary">Cienergy</h1>
-        <p className="text-sm text-muted-foreground">Coffee Admin</p>
+        <h1 className="font-special text-xl font-bold bg-gradient-to-r from-cf-darkest via-cf-darker to-cf-medium inline-block text-transparent bg-clip-text">
+          Cienergy
+        </h1>
       </div>
 
       {/* Navigation */}

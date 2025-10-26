@@ -71,7 +71,7 @@ export const users = [
   {
     id: "USR001",
     name: "Nguyễn Văn A",
-    email: "nguyenvana@gmail.com",
+    address: "Hà Nội",
     phone: "0901234567",
     ordersCount: 24,
     status: "active" as const,
@@ -79,7 +79,7 @@ export const users = [
   {
     id: "USR002",
     name: "Trần Thị B",
-    email: "tranthib@gmail.com",
+    address: "Hà Nội",
     phone: "0902345678",
     ordersCount: 18,
     status: "active" as const,
@@ -87,7 +87,7 @@ export const users = [
   {
     id: "USR003",
     name: "Lê Văn C",
-    email: "levanc@gmail.com",
+    address: "Hà Nội",
     phone: "0903456789",
     ordersCount: 31,
     status: "active" as const,
@@ -95,7 +95,7 @@ export const users = [
   {
     id: "USR004",
     name: "Phạm Thị D",
-    email: "phamthid@gmail.com",
+    address: "Hà Nội",
     phone: "0904567890",
     ordersCount: 5,
     status: "blocked" as const,
@@ -103,7 +103,7 @@ export const users = [
   {
     id: "USR005",
     name: "Hoàng Văn E",
-    email: "hoangvane@gmail.com",
+    address: "Hà Nội",
     phone: "0905678901",
     ordersCount: 42,
     status: "active" as const,

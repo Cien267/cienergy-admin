@@ -4,14 +4,7 @@ import { useAuth } from "@/contexts/AuthContext"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Coffee } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { toast } from "sonner"
 import { motion } from "framer-motion"
 
@@ -45,18 +38,15 @@ export default function Login() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <Card className="w-full max-w-md shadow-lg">
+        <Card className="w-96 shadow-lg">
           <CardHeader className="space-y-4 text-center">
             <div className="flex justify-center">
-              <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center">
-                <Coffee className="w-10 h-10 text-primary-foreground" />
-              </div>
+              <img src="/images/favicon.png" alt="" className="w-20 h-20" />
             </div>
             <div>
-              <CardTitle className="text-3xl font-bold">Cienergy</CardTitle>
-              <CardDescription className="mt-2">
-                Sign in to your admin dashboard
-              </CardDescription>
+              <CardTitle className="font-special text-2xl font-bold bg-gradient-to-r from-cf-darkest via-cf-darker to-cf-medium inline-block text-transparent bg-clip-text">
+                Cienergy
+              </CardTitle>
             </div>
           </CardHeader>
           <CardContent>
@@ -73,7 +63,7 @@ export default function Login() {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">Mật khẩu</Label>
                 <Input
                   id="password"
                   type="password"
@@ -84,7 +74,7 @@ export default function Login() {
                 />
               </div>
               <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Signing in..." : "Sign in"}
+                {isLoading ? "Đang đăng nhập..." : "Đăng nhập"}
               </Button>
               <p className="text-xs text-center text-muted-foreground mt-4">
                 Demo: admin@cienergy.com / admin123

@@ -23,7 +23,7 @@ import { Badge } from "@/components/ui/badge"
 export interface User {
   id: string
   name: string
-  email: string
+  address: string
   phone: string
   ordersCount: number
   status: "active" | "blocked"
@@ -47,7 +47,7 @@ export function UserDrawer({
   const [formData, setFormData] = useState<User>({
     id: "",
     name: "",
-    email: "",
+    address: "",
     phone: "",
     ordersCount: 0,
     status: "active",
@@ -60,7 +60,7 @@ export function UserDrawer({
       setFormData({
         id: `USR${Math.random().toString(36).substr(2, 9).toUpperCase()}`,
         name: "",
-        email: "",
+        address: "",
         phone: "",
         ordersCount: 0,
         status: "active",
@@ -107,13 +107,13 @@ export function UserDrawer({
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="address">Địa chỉ</Label>
             <Input
-              id="email"
-              type="email"
-              value={formData.email}
+              id="address"
+              type="text"
+              value={formData.address}
               onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
+                setFormData({ ...formData, address: e.target.value })
               }
               disabled={isViewMode}
             />

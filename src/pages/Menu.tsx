@@ -29,12 +29,14 @@ export default function Menu() {
         {/* Header with Add Button */}
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-foreground">Coffee Menu</h2>
-            <p className="text-muted-foreground mt-1">Manage your products</p>
+            <h2 className="text-2xl font-bold text-foreground">Menu</h2>
+            <p className="text-muted-foreground mt-1">
+              Quản lý menu món của bạn
+            </p>
           </div>
           <Button onClick={handleAddNew} className="gap-2">
             <Plus className="h-4 w-4" />
-            Add New Item
+            Thêm món mới
           </Button>
         </div>
 
@@ -70,7 +72,7 @@ export default function Menu() {
                     onClick={() => handleEdit(item.name)}
                   >
                     <Edit className="h-4 w-4" />
-                    Edit
+                    Sửa
                   </Button>
                 </CardFooter>
               </Card>

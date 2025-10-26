@@ -41,50 +41,37 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen">
-      <Header title="Dashboard" />
+      <Header title="Trang chủ" />
 
       <main className="p-6 space-y-6">
-        {/* Greeting */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <h1 className="text-3xl font-bold text-foreground">
-            Good morning, Kiên 👋
-          </h1>
-          <p className="text-muted-foreground mt-1">
-            Here's what's happening with your coffee shop today.
-          </p>
-        </motion.div>
-
         {/* Stats Grid */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <StatCard
-            title="Total Orders"
+            title="Số lượng đơn hàng"
             value={stats.totalOrders}
             icon={ShoppingCart}
-            description="All time orders"
+            description="Toàn thời gian"
             index={0}
           />
           <StatCard
-            title="Revenue Today"
+            title="Doanh thu"
             value={`${stats.revenueToday.toLocaleString("vi-VN")} ₫`}
             icon={DollarSign}
-            description="Today's earnings"
+            description="Hôm nay"
             index={1}
           />
           <StatCard
-            title="Pending Orders"
+            title="Đơn hàng chờ xử lý"
             value={stats.pendingOrders}
             icon={Clock}
-            description="Awaiting preparation"
+            description="Cần xử lý"
             index={2}
           />
           <StatCard
-            title="Top Product"
+            title="Top sản phẩm"
             value={stats.topProduct}
             icon={TrendingUp}
-            description="Best seller this week"
+            description="Bán chạy nhất tuần này"
             index={3}
           />
         </div>
@@ -97,7 +84,7 @@ export default function Dashboard() {
         >
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>Sales Overview</CardTitle>
+              <CardTitle>Tổng quan</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>
@@ -143,18 +130,18 @@ export default function Dashboard() {
         >
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>Latest Orders</CardTitle>
+              <CardTitle>Đơn hàng gần nhất</CardTitle>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
                     <TableHead>Order ID</TableHead>
-                    <TableHead>Customer</TableHead>
-                    <TableHead>Product</TableHead>
-                    <TableHead>Total</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Time</TableHead>
+                    <TableHead>Khách</TableHead>
+                    <TableHead>Sản phẩm</TableHead>
+                    <TableHead>Tổng tiền</TableHead>
+                    <TableHead>Trạng thái</TableHead>
+                    <TableHead>Thời gian</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

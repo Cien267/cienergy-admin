@@ -28,37 +28,37 @@ const COLORS = [
 export default function Analytics() {
   return (
     <div className="min-h-screen">
-      <Header title="Analytics" />
+      <Header title="Thống kê" />
 
       <main className="p-6 space-y-6">
         {/* KPI Cards */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <StatCard
-            title="Total Revenue"
+            title="Tổng doanh thu"
             value={`${stats.totalRevenue.toLocaleString("vi-VN")} ₫`}
             icon={DollarSign}
-            description="This month"
+            description="Tháng này"
             index={0}
           />
           <StatCard
-            title="Total Orders"
+            title="Tổng đơn hàng"
             value={stats.totalOrders}
             icon={ShoppingCart}
-            description="This month"
+            description="Tháng này"
             index={1}
           />
           <StatCard
-            title="Average Order Value"
+            title="Giá trị trung bình"
             value={`${stats.averageOrderValue.toLocaleString("vi-VN")} ₫`}
             icon={TrendingUp}
-            description="Per order"
+            description="Của mỗi đơn hàng"
             index={2}
           />
           <StatCard
-            title="Active Customers"
+            title="Khách hàng"
             value={stats.activeUsers}
             icon={Activity}
-            description="Regular customers"
+            description="Đang hoạt động"
             index={3}
           />
         </div>
@@ -73,7 +73,7 @@ export default function Analytics() {
           >
             <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle>Orders Per Day</CardTitle>
+                <CardTitle>Đơn hàng hằng ngày</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -117,7 +117,7 @@ export default function Analytics() {
           >
             <Card className="shadow-sm">
               <CardHeader>
-                <CardTitle>Best Selling Drinks</CardTitle>
+                <CardTitle>Đố uống đắt hàng nhất</CardTitle>
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
@@ -163,7 +163,7 @@ export default function Analytics() {
         >
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>Revenue Overview</CardTitle>
+              <CardTitle>Tổng quan doanh thu</CardTitle>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={300}>

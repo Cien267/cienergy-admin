@@ -39,7 +39,7 @@ export default function Users() {
   const filteredUsers = users.filter(
     (user) =>
       user.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      user.email.toLowerCase().includes(searchQuery.toLowerCase())
+      user.phone.toLowerCase().includes(searchQuery.toLowerCase())
   )
 
   const handleView = (user: User) => {
@@ -72,25 +72,25 @@ export default function Users() {
 
   return (
     <div className="min-h-screen">
-      <Header title="Users" />
+      <Header title="Khách hàng" />
 
       <main className="p-4 md:p-6 space-y-6">
         {/* Stats */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <StatCard
-            title="Total Users"
+            title="Tổng khách"
             value={stats.totalUsers}
             icon={UsersIcon}
             index={0}
           />
           <StatCard
-            title="Active Users"
+            title="Hoạt động"
             value={stats.activeUsers}
             icon={UserCheck}
             index={1}
           />
           <StatCard
-            title="Blocked Users"
+            title="Bị chặn"
             value={stats.blockedUsers}
             icon={UserX}
             index={2}
@@ -104,12 +104,11 @@ export default function Users() {
         >
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>All Users</CardTitle>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                   <Input
-                    placeholder="Search by name or email..."
+                    placeholder="Tìm theo tên hoặc sđt..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-9"
@@ -117,7 +116,7 @@ export default function Users() {
                 </div>
                 <Button className="gap-2" onClick={handleCreate}>
                   <Plus className="h-4 w-4" />
-                  <span className="hidden sm:inline">New User</span>
+                  <span className="hidden sm:inline">Thêm khách hàng</span>
                 </Button>
               </div>
             </CardHeader>
@@ -126,13 +125,15 @@ export default function Users() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="min-w-[120px]">Name</TableHead>
-                      <TableHead className="min-w-[180px]">Email</TableHead>
-                      <TableHead className="min-w-[120px]">Phone</TableHead>
-                      <TableHead className="min-w-[80px]">Orders</TableHead>
-                      <TableHead className="min-w-[100px]">Status</TableHead>
+                      <TableHead className="min-w-[120px]">Tên</TableHead>
+                      <TableHead className="min-w-[180px]">Địa chỉ</TableHead>
+                      <TableHead className="min-w-[120px]">SĐT</TableHead>
+                      <TableHead className="min-w-[80px]">Đơn hàng</TableHead>
+                      <TableHead className="min-w-[100px]">
+                        Trạng thái
+                      </TableHead>
                       <TableHead className="text-right min-w-[150px]">
-                        Action
+                        Hành động
                       </TableHead>
                     </TableRow>
                   </TableHeader>
@@ -142,7 +143,7 @@ export default function Users() {
                         <TableCell className="font-medium">
                           {user.name}
                         </TableCell>
-                        <TableCell>{user.email}</TableCell>
+                        <TableCell>{user.address}</TableCell>
                         <TableCell>{user.phone}</TableCell>
                         <TableCell>{user.ordersCount}</TableCell>
                         <TableCell>
@@ -164,7 +165,7 @@ export default function Users() {
                               onClick={() => handleView(user)}
                             >
                               <Eye className="h-4 w-4 sm:mr-1" />
-                              <span className="hidden sm:inline">View</span>
+                              <span className="hidden sm:inline">Xem</span>
                             </Button>
                             <Button
                               variant="ghost"
@@ -172,7 +173,7 @@ export default function Users() {
                               onClick={() => handleEdit(user)}
                             >
                               <Edit className="h-4 w-4 sm:mr-1" />
-                              <span className="hidden sm:inline">Edit</span>
+                              <span className="hidden sm:inline">Sửa</span>
                             </Button>
                           </div>
                         </TableCell>

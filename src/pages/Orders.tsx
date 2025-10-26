@@ -96,14 +96,14 @@ export default function Orders() {
         >
           <Card className="shadow-sm">
             <CardHeader>
-              <CardTitle>Order Management</CardTitle>
+              <CardTitle>Quản lý đơn đặt hàng</CardTitle>
 
               {/* Filters */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <div className="relative flex-1">
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
                   <Input
-                    placeholder="Search by customer or order ID..."
+                    placeholder="Tìm theo khách hoặc mã đơn..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="pl-9"
@@ -112,19 +112,19 @@ export default function Orders() {
 
                 <Select value={statusFilter} onValueChange={setStatusFilter}>
                   <SelectTrigger className="w-full sm:w-48">
-                    <SelectValue placeholder="Filter by status" />
+                    <SelectValue placeholder="Lọc theo trạng thái" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">All Status</SelectItem>
-                    <SelectItem value="pending">Pending</SelectItem>
-                    <SelectItem value="completed">Completed</SelectItem>
-                    <SelectItem value="cancelled">Cancelled</SelectItem>
+                    <SelectItem value="all">Tất cả</SelectItem>
+                    <SelectItem value="pending">Chờ xử lý</SelectItem>
+                    <SelectItem value="completed">Hoàn thành</SelectItem>
+                    <SelectItem value="cancelled">Đã hủy</SelectItem>
                   </SelectContent>
                 </Select>
 
                 <Button className="gap-2" onClick={handleCreate}>
                   <Plus className="h-4 w-4" />
-                  <span className="hidden sm:inline">New Order</span>
+                  <span className="hidden sm:inline">Đơn hàng mới</span>
                 </Button>
               </div>
             </CardHeader>
@@ -134,14 +134,18 @@ export default function Orders() {
                 <Table>
                   <TableHeader>
                     <TableRow>
-                      <TableHead className="min-w-[100px]">Order ID</TableHead>
-                      <TableHead className="min-w-[120px]">Customer</TableHead>
-                      <TableHead className="min-w-[120px]">Product</TableHead>
-                      <TableHead className="min-w-[100px]">Total</TableHead>
-                      <TableHead className="min-w-[100px]">Status</TableHead>
-                      <TableHead className="min-w-[120px]">Time</TableHead>
+                      <TableHead className="min-w-[100px]">
+                        ID đơn hàng
+                      </TableHead>
+                      <TableHead className="min-w-[120px]">Khách</TableHead>
+                      <TableHead className="min-w-[120px]">Sản phẩm</TableHead>
+                      <TableHead className="min-w-[100px]">Tổng tiền</TableHead>
+                      <TableHead className="min-w-[100px]">
+                        Trạng thái
+                      </TableHead>
+                      <TableHead className="min-w-[120px]">Thời gian</TableHead>
                       <TableHead className="text-right min-w-[150px]">
-                        Actions
+                        Hành động
                       </TableHead>
                     </TableRow>
                   </TableHeader>
@@ -172,7 +176,7 @@ export default function Orders() {
                               onClick={() => handleView(order)}
                             >
                               <Eye className="h-4 w-4 sm:mr-1" />
-                              <span className="hidden sm:inline">View</span>
+                              <span className="hidden sm:inline">Xem</span>
                             </Button>
                             <Button
                               variant="ghost"
@@ -180,7 +184,7 @@ export default function Orders() {
                               onClick={() => handleEdit(order)}
                             >
                               <Edit className="h-4 w-4 sm:mr-1" />
-                              <span className="hidden sm:inline">Edit</span>
+                              <span className="hidden sm:inline">Sửa</span>
                             </Button>
                           </div>
                         </TableCell>
@@ -193,14 +197,15 @@ export default function Orders() {
               {/* Pagination Mock */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
                 <p className="text-sm text-muted-foreground">
-                  Showing {filteredOrders.length} of {orders.length} orders
+                  Hiển thị {filteredOrders.length} trong {orders.length} đơn
+                  hàng
                 </p>
                 <div className="flex gap-2">
                   <Button variant="outline" size="sm" disabled>
-                    Previous
+                    Trước
                   </Button>
                   <Button variant="outline" size="sm">
-                    Next
+                    Sau
                   </Button>
                 </div>
               </div>
